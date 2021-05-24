@@ -1,6 +1,27 @@
 import React, { Component, useState } from 'react';
 import propTypes from 'prop-types';
 import { Card, CardContent, Grid, makeStyles, Typography, withStyles } from '@material-ui/core';
+import FB from '../Assets/FB.png';
+import GOOGL from '../Assets/GOOGL.png';
+import AMZN from '../Assets/AMZN.svg';
+
+const cardList = [
+  {
+    title: 'GOOGL',
+    img: GOOGL,
+    amt: '1515USD',
+  },
+  {
+    title: 'FB',
+    img: FB,
+    amt: '266USD',
+  },
+  {
+    title: 'AMZN',
+    img: AMZN,
+    amt: '3116USD',
+  },
+];
 
 const style = theme => ({
   root: {
@@ -23,25 +44,38 @@ class HeroCards extends Component {
     super(props);
     this.state = {
       dragindex: 0,
+      cards: cardList,
     };
   }
+  // const [cards, setCards] = useState(cardList);
+  // const onDrop = (start, drop) => {
+  //   let temp = cards[start];
+  //   cards[start] = cards[drop];
+  //   cards[drop] = temp;
+  //   console.log('dddf', cards);
+
+  //   setCards(cards);
+  // };
   dragstart = e => {
     // e.preventDefault();
     this.setState({ dragindex: e.currentTarget.id });
   };
   dragsover = (e, i) => {
-    console.log('drag stiopp', e.currentTarget.id);
-    this.props.onDrop(this.state.dragindex, e.currentTarget.id);
-    // e.preventDefault();
-    // setdragindex(i);
+    let id = e.currentTarget?.id;
+    let { dragindex, cards } = this.state;
+    if (id !== undefined) {
+      let temp = cards[dragindex];
+      cards[dragindex] = cards[id];
+      cards[id] = temp;
+      this.setState({ cards: cards });
+    }
   };
   render() {
-    const { cards } = this.props;
-    const { dragindex } = this.state;
+    const { cards } = this.state;
     const { classes } = this.props;
-
+    console.log('cards', cards);
     return (
-      <Grid container spacing={3} style={{ width: '100%' }}>
+      <Grid container spacing={3} style={{ width: '100%', marginBottom: '20px' }}>
         <Grid item lg={12} sm={12} md={12} style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap' }}>
           {cards.map((card, i) => {
             return (
