@@ -1,6 +1,6 @@
 web: cd client 
 web: npm i
-web: npm runbuild
+web: npm run build
 web: cd ..
 web: cd server
 web: npm start
