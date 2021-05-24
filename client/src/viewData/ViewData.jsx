@@ -3,6 +3,7 @@ import Axios from 'axios';
 import React, { Component } from 'react';
 import { abbreviate_number } from '../components/abbreviate_number';
 import CircularLoader from '../components/CircularLoader';
+import HeroCards from '../components/HeroCards';
 import '../home/home.css';
 export default class ViewData extends Component {
   constructor(props) {
@@ -50,6 +51,7 @@ export default class ViewData extends Component {
           <CircularLoader />
         ) : (
           <Grid item xs>
+            <HeroCards />
             <TableContainer component={Paper} className='table-container'>
               <Table>
                 <TableHead className='table-head'>

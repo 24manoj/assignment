@@ -5,6 +5,7 @@ import { KeyboardArrowLeft, KeyboardArrowRight, Search } from '@material-ui/icon
 import './home.css';
 import CircularLoader from '../components/CircularLoader';
 import { abbreviate_number } from '../components/abbreviate_number';
+import HeroCards from '../components/HeroCards';
 
 class Home extends Component {
   constructor(props) {
@@ -53,12 +54,12 @@ class Home extends Component {
   };
   handleSearch = e => {
     try {
-      const { cryptoList } = this.state;
+      const { cryptoList, startIndex, endIndex, pagination } = this.state;
       let value = e.target.value;
       let matched = cryptoList.filter(ele => ele.details.name.match(value.trim()));
       this.setState({
-        uiList: matched,
-        pagination: { ...this.state.pagination, search: value },
+        uiList: matched.slice(startIndex, endIndex),
+        pagination: { ...this.state.pagination, search: value, count: matched.length },
       });
     } catch (e) {}
   };
@@ -84,6 +85,7 @@ class Home extends Component {
           <CircularLoader />
         ) : (
           <Grid item xs>
+            <HeroCards />
             <TableContainer component={Paper} className='table-container'>
               <Table>
                 <TableHead>
