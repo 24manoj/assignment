@@ -91,7 +91,7 @@ class Home extends Component {
                     <TableCell size='small' align='center'>
                       <strong> Stock Details Table</strong>
                     </TableCell>
-                    <TableCell size='small' align='left' colSpan={4}>
+                    <TableCell size='small' align='left' colSpan={3}>
                       <TextField
                         placeholder='search by company name'
                         variant='filled'
@@ -178,7 +178,7 @@ class Home extends Component {
                 </TableBody>
                 <TableFooter className='footer-head'>
                   <TableRow>
-                    <TableCell colSpan={4}></TableCell>
+                    <TableCell colSpan={3}></TableCell>
                     <TableCell colSpan={2} align='right'>
                       {count && page * rowsPerPage + 1}-{count >= (page + 1) * rowsPerPage ? (page + 1) * rowsPerPage : count} of {count}
                       <IconButton disabled={page === 0} onClick={e => this.handlePage(e, page - 1, startIndex - 5, endIndex - 5)}>
