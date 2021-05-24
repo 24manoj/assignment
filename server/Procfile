@@ -3,4 +3,5 @@ web: npm i
 web: npm start
 web: cd ..
 web: cd server
+web: npm i
 web: npm start
