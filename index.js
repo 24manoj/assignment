@@ -51,6 +51,7 @@ mongoose.connection.on('error', () => {
   process.exit(1);
 });
 //checks ES Clustery
-server.listen(5000, () => {
-  console.log('App is listening on port ' + 5000);
+const port = process.env.port || 5000;
+server.listen(port, () => {
+  console.log('App is listening on port ' + port);
 });
