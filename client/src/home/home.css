@@ -1,0 +1,44 @@
+.table-head {
+  /* text-transform: ; */
+}
+
+.table-container {
+  border: 3px solid #efefef;
+  border-radius: 10px !important;
+}
+
+.search {
+  border-radius: 10px;
+}
+
+.view-button {
+  background-color: #6d5bd0 !important;
+  color: #efefef !important;
+  font-weight: bold !important;
+}
+.save-button {
+  background-color: #18a0fb !important;
+  color: #efefef !important;
+}
+.table-head {
+  text-transform: uppercase;
+  background-color: #efefef;
+}
+.table-head .MuiTableCell {
+  padding: 10px !important;
+}
+.footer-head {
+  background-color: #efefef;
+}
+
+.footer-head .MuiTableCell-root {
+  padding: 0px;
+}
+.text-field {
+  max-width: 500px;
+  margin-left: 10px !important;
+  background-color: #f4f2ff;
+}
+.text-field .MuiInputBase-root {
+  border-radius: 10px;
+}

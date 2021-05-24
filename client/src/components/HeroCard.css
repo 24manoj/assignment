@@ -1,0 +1,10 @@
+.MuiCard {
+  /* Add shadows to create the "card" effect */
+  background-color: #090a0cbe !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+.card-container {
+  display: flex !important;
+  justify-content: space-around !important;
+  flex-wrap: wrap;
+}
