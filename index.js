@@ -37,7 +37,7 @@ routes(app);
 // app.listen(port);
 const server = http.createServer(app);
 
-mongoose.connect('mongodb+srv://manoj:manoj123@cluster0.afc70.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', { useCreateIndex: true, useNewUrlParser: true });
+mongoose.connect(process.env.mongourl, { useCreateIndex: true, useNewUrlParser: true });
 //event Emiters
 mongoose.connection.on('connected', () => {
   console.log('Database connected sucessfully');
